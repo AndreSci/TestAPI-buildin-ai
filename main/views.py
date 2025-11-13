@@ -7,11 +7,6 @@ from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from .models import Incident
 
-# Глобальный кэш
-STATUS_CACHE = {}
-SOURCE_CACHE = {}
-CACHE_LOADED = False
-
 
 def home(request):
     return HttpResponse("Привет, Django!")
@@ -101,7 +96,6 @@ def update_incident_status(request):
     if not new_status:
         return JsonResponse({"error": "Field 'new_status' is required"}, status=400)
 
-    # найти инцидент
     try:
         incident = Incident.objects.get(id=incident_id)
     except Incident.DoesNotExist:
