@@ -1,0 +1,22 @@
+TestAPI_buildin_ai/
+├─.venv/
+├─ docker-compose.yml
+├─ .env
+├─ Dockerfile
+├─ entrypoint.sh
+├─ manage.py
+├─ requirements.txt
+└─TestAPI_buildin_ai/
+│   ├─ __init__.py
+│   ├─ settings.py
+│   ├─ urls.py
+│   ├─ asgi.py
+│   └─ wsgi.py
+└─ main/
+   ├─ __init__.py
+   ├─ models.py
+   ├─ apps.py
+   ├─ admin.py
+   ├─ views.py
+   ├─ tests.py
+   └─ migrations/
