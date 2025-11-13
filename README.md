@@ -1,6 +1,6 @@
 # TestAPI-buildin.ai DJANGO + ORM
 
-<img src="new_img.png" alt="Описание изображения" width="600">
+<img src="incident-management.jpg" alt="Описание изображения" width="600">
 
 [![Build Status](https://img.shields.io/badge/Python-3.12-green)](https://www.python.org/downloads/) ![Build Status](https://img.shields.io/badge/Docker-2025-blue) ![Build Status](https://img.shields.io/badge/PostgresSQL-2025-orange) ![Build Status](https://img.shields.io/badge/PyCharm-2025-green) ![Build Status](https://img.shields.io/badge/Django-2025-red)
 
