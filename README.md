@@ -2,7 +2,7 @@
 
 <img src="main_image.JPG" alt="Описание изображения" width="600">
 
-[![Build Status](https://img.shields.io/badge/python-3.12-green)](https://www.python.org/downloads/) ![Build Status](https://img.shields.io/badge/Docker-2025-blue)
+[![Build Status](https://img.shields.io/badge/Python-3.12-green)](https://www.python.org/downloads/) ![Build Status](https://img.shields.io/badge/Docker-2025-blue) ![Build Status](https://img.shields.io/badge/PostgresSQL-2025-orange)
 
 ## Описание
 
