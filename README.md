@@ -22,3 +22,39 @@
 2. **Установка через docker:**
     ```bash
    docker-compose up -d --build
+   
+## Инструкция запросов
+
+1. Создать инцидент
+    ```bash
+    POST - 127.0.0.1:8000/incidents/create/
+   ```
+    в боди запроса должен быть JSON
+    ```
+   {
+    "msg": "some text",
+    "status": "open",
+    "source": "operator 404"
+    }
+   ```
+---
+2. Получить инциденты по статусу
+    ```bash
+   GET - 127.0.0.1:8000/incidents/?status=closed
+   ```
+   На данный момент свободный текст, но подразумевается что будут варианты "open\closed\progress"
+    ```
+    Params (заменить часть кода запроса): ?status=open
+    ```
+---
+3. Обновить статус инцидента по ID
+    ```bash
+   POST or PUT - 127.0.0.1:8000/incidents/update_status/
+   ```
+   в body запроса должен быть JSON
+   ```
+   {
+    "id": 1,
+    "new_status": "closed"
+   }
+   ```
