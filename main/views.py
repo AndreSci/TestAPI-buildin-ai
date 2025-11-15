@@ -5,6 +5,7 @@ from django.http import HttpResponse
 import json
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
+from django.views.decorators.http import require_http_methods, require_POST, require_GET
 from .models import Incident
 
 
@@ -12,10 +13,9 @@ def home(request):
     return HttpResponse("Привет, Django!")
 
 
+@require_POST
 @csrf_exempt
 def create_incident(request):
-    if request.method != "POST":
-        return JsonResponse({"error": "Only POST allowed"}, status=405)
 
     try:
         data = json.loads(request.body or "{}")
@@ -49,9 +49,8 @@ def create_incident(request):
     )
 
 
+@require_GET
 def get_incidents(request):
-    if request.method != "GET":
-        return JsonResponse({"error": "Only GET allowed"}, status=405)
 
     status_text = request.GET.get("status")
 
@@ -77,10 +76,9 @@ def get_incidents(request):
     return JsonResponse({"incidents": data}, status=200)
 
 
+@require_http_methods(["POST", "PUT"])
 @csrf_exempt
 def update_incident_status(request):
-    if request.method not in ("POST", "PUT"):
-        return JsonResponse({"error": "Only POST or PUT allowed"}, status=405)
 
     try:
         data = json.loads(request.body or "{}")
